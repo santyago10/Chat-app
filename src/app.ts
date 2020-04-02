@@ -1,7 +1,7 @@
-import "reflect-metadata";
+//import "reflect-metadata";
 import express from 'express';
 import * as bodyParser from 'body-parser';
-import "es6-shim";
+//import "es6-shim";
 import { getRepository } from 'typeorm';
 
 class App {
