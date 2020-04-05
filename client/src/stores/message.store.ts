@@ -10,7 +10,10 @@ export const Store = types.model({
 .actions( self => ({
     async getMessages(){
         let messages = await service.getMessages();
-        self.messages = messages;
+        debugger;
+        if( messages ){
+            self.messages = messages;
+        }
     },
 
     async sendMessage( e, inputNickname, inputMessage ){

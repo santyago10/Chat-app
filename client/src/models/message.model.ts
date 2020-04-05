@@ -7,7 +7,6 @@ export const Message = types.model({
 .actions( self => ({
     setText( newText: string ){
         self.text = newText;
-        console.log( self.text );
     }
 }))
 
