@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
 import User from './user.entity';
 
 @Entity()
@@ -7,7 +7,7 @@ class Message{
     public id: number;
 
     @Column()
-    public text: string;
+    public text: string;    
 
     @ManyToOne( () => User, (user: User) => user.messages)
     public user_: User;

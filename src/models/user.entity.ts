@@ -1,12 +1,9 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn, PrimaryColumn } from 'typeorm';
 import Message from './message.entity';
 
 @Entity()
 class User{
-    @PrimaryGeneratedColumn()
-    public id: number;
-
-    @Column()
+    @PrimaryColumn()
     public nickname: string;
 
     @OneToMany( () => Message, (message: Message) => message.user_)
