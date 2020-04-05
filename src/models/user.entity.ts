@@ -6,6 +6,9 @@ class User{
     @PrimaryColumn()
     public nickname: string;
 
+    @Column()
+    public password: string;
+
     @OneToMany( () => Message, (message: Message) => message.user_)
     public messages: Message[];
 

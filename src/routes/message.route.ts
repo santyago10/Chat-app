@@ -11,8 +11,13 @@ class MessageRoute{
   }
  
   private initializeRoutes() {
-    this.router.get( this.path, this.controller.getAll );
-    this.router.get( `${this.path}/:id`, this.controller.getById );
+    this.router.get( this.path, function ( req, res, next ) {
+      if(req.isAuthenticated())
+      next();
+      else
+      res.send(false);
+     }, this.controller.getAll );
+     
     this.router.post( this.path, this.controller.createMessage );
 
   }

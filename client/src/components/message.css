@@ -74,7 +74,7 @@ textarea{
     left: 50%;
     margin-left: -250px;
     height: auto;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .user {
@@ -139,4 +139,42 @@ textarea{
 .form {
     padding: 0;
     width: 500px;
+}
+
+.logoutButton{
+    float: right;
+    width: 70px; 
+    height: 30px;
+    color: white;
+    background-color: rgb(255, 59, 75) ;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+}
+
+.logoutButton:hover {
+    color: rgb(255, 59, 75);
+    background-color: white;
+    border: 1px solid rgb(255, 59, 75);
+    cursor: pointer;
+}
+
+.login-form{
+    width: 200px;
+    text-align: center;
+    border: 1px solid rgb(112, 166, 247);
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top: 50%;
+    margin-top: -150px;
+}
+
+
+
+.login-form input {
+    margin: 10px;
+    border: 1px solid rgb(112, 166, 247);
+    border-radius: 3px;
 }
