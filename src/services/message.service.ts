@@ -9,13 +9,13 @@ class MessageService {
     }
 
     public async getAll(){
-        let messages = await this.messageRepository.find();
+        let messages = await this.messageRepository.query('SELECT * FROM MESSAGE');
         return messages;
     }
 
     public async createMessage( data ){
-        let message = await this.messageRepository.save( data );
-        return message;
+        let newMessage = await this.messageRepository.save( data );
+        return newMessage;
     }
 
     public async getById( id ){

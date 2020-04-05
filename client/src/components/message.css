@@ -1,0 +1,142 @@
+textarea{
+    resize: none;
+}
+
+.smithMessage{
+    float: right;
+    width: auto;
+    clear: both;
+    margin: 5px;
+}
+
+.smithMessage >  p{
+    float: right;
+    clear: both;
+}
+
+.smithMessage > .content{
+    display: block;
+    padding: 5px;
+    background-color: aqua;
+    border-radius: 10px;
+    margin-top: 0;
+    word-wrap: break-word;
+    max-width: 250px;
+    text-align: left;
+}
+
+.smithMessage > .owner {
+    margin-bottom: 0;
+    font-size: small;
+    color: grey;
+
+}
+
+.johnMessage{
+    float: left;
+    clear: both;
+}
+
+.johnMessage > p {
+    float: left;
+    clear: both;
+}
+
+.johnMessage > .content{
+    display: inline-block;
+    padding: 5px;
+    background-color: rgb(224, 126, 248);
+    border-radius: 10px;
+    max-width: 250px;
+    height:auto;
+    margin-top: 0;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.johnMessage > .owner {
+    margin-bottom: 0;
+    font-size: small;
+    color: grey;
+
+}
+
+.dialogue{
+    width: 500px;
+    height: 550px;
+    overflow: auto;
+    border: 1px solid rgb(202, 202, 202);
+    border-top-left-radius: 10px;
+}
+
+.window{
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    height: auto;
+    text-align: center;
+}
+
+.user {
+    clear: both;
+    width: 70px; 
+    height: 30px;
+    color: white;
+    background-color: rgb(102, 149, 252) ;
+    border-radius: 10px;
+    border: none;
+}
+
+.user > option{
+    background-color: white;
+    color: black;
+}
+
+.user:hover {
+    color: rgb(102, 149, 252);
+    background-color: white ;
+    border: 1px solid rgb(102, 149, 252);
+    cursor: pointer;
+}
+
+.messageContent {
+    width: 496px;
+    height: 50px;
+    text-align: left;
+    border: 1px solid rgb(202, 202, 202);
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.sendButton {
+    clear: both;
+    width: 70px; 
+    height: 30px;
+    color: white;
+    background-color: rgb(102, 149, 252) ;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+}
+
+.smith{
+    background-color: aqua;
+}
+
+.john{
+    background-color: rgb(224, 126, 248);
+}
+
+.sendButton:hover {
+    color: rgb(102, 149, 252);
+    background-color: white;
+    border: 1px solid rgb(102, 149, 252);
+    cursor: pointer;
+}
+
+.form {
+    padding: 0;
+    width: 500px;
+}
