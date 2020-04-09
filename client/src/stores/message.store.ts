@@ -10,7 +10,6 @@ export const Store = types.model({
 .actions( self => ({
     async getMessages(){
         let messages = await service.getMessages();
-        debugger;
         if( messages ){
             self.messages = messages;
         }
@@ -19,6 +18,10 @@ export const Store = types.model({
     async sendMessage( e, inputNickname, inputMessage ){
         e.preventDefault();
         e.stopPropagation();
+
+        if( inputMessage.trim().length === 0)
+        alert(" You can't send empty message");
+        else{
 
         let data = {
             user_: inputNickname,
@@ -36,7 +39,11 @@ export const Store = types.model({
         div.scrollTop = div.scrollHeight;
 
         messageModel.setText("");
-        service.sendMessage( data );   
+        if( !await service.sendMessage( data ) ){
+            alert( "Error while connecting to server" );
+            self.messages.pop();
+        }
+    }
     }
 }))
 

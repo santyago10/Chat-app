@@ -19,13 +19,10 @@ export const Store = types.model({
 
         let response = await service.login( data );
 
-        debugger;
         if( !response  ){
             alert("Uncorrect nickname or password");
-        debugger;
         }        
         else{
-        debugger;
         window.location.href = "/";
         }
     },

@@ -10,13 +10,23 @@ export class Service{
     }
 
     public async sendMessage( data ){
-        let response = await axios.post( `${ this.path }/messages`, data );
-        return response.data;
+        try{
+            let response = await axios.post( `${ this.path }/messages`, data );
+            return response.data;
+        }
+        catch( err ){
+            return false;
+        }
     }
 
     public async login ( data ){
-        let response = await axios.post( `${ this.path }/login`, data, { withCredentials: true } );
-        return response;
+        try{
+            var response = await axios.post( `${ this.path }/login`, data, { withCredentials: true } );
+            return response;
+        }
+        catch( err ){
+            return false;
+        }
     }
 
     public async isAuthenticated(){

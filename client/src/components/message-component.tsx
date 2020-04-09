@@ -12,13 +12,6 @@ export class MessageComponent extends React.Component{
         userStore.isAuthenticated();
         messageStore.getMessages();
     }
-    
-    componentDidMount(){
-        let div = document.getElementById("dialogue");
-        div.scrollTop = div.scrollHeight;
-        console.log(div);
-    }
-
     render(){
         return <div className = "window">
             <Logout title = "Logout" onClick = { e => { userStore.logout() } }/>

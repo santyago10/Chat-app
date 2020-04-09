@@ -26,8 +26,7 @@ class UserRoute{
      }
      else
      {
-     console.log(req);
-     res.send(false);
+      res.send(false);
      }
     }
     );
