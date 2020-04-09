@@ -19,31 +19,32 @@ export const Store = types.model({
         e.preventDefault();
         e.stopPropagation();
 
-        if( inputMessage.trim().length === 0)
-        alert(" You can't send empty message");
-        else{
-
-        let data = {
-            user_: inputNickname,
-            text: inputMessage.trim()
+        if( inputMessage.trim().length === 0){
+            alert(" You can't send empty message");
         }
+        else
+        {
+            let data = {
+                user_: inputNickname,
+                text: inputMessage.trim()
+            }
 
-        let newMessage = {
-            user_nickname: inputNickname,
-            text: inputMessage.trim()
+            let newMessage = {
+                user_nickname: inputNickname,
+                text: inputMessage.trim()
+            }
+
+            await self.messages.push( newMessage );
+
+            let div = document.getElementById("dialogue");
+            div.scrollTop = div.scrollHeight;
+
+            messageModel.setText("");
+            if( !await service.sendMessage( data ) ){
+                alert( "Error while connecting to server" );
+                self.messages.pop();
+            }
         }
-
-        await self.messages.push( newMessage );
-
-        let div = document.getElementById("dialogue");
-        div.scrollTop = div.scrollHeight;
-
-        messageModel.setText("");
-        if( !await service.sendMessage( data ) ){
-            alert( "Error while connecting to server" );
-            self.messages.pop();
-        }
-    }
     }
 }))
 
