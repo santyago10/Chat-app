@@ -12,6 +12,7 @@ export const Store = types.model({
         let messages = await service.getMessages();
         if( messages ){
             self.messages = messages;
+            this.scrollDown();
         }
     },
 
@@ -36,15 +37,19 @@ export const Store = types.model({
 
             await self.messages.push( newMessage );
 
-            let div = document.getElementById("dialogue");
-            div.scrollTop = div.scrollHeight;
-
+            this.scrollDown();
+            
             messageModel.setText("");
             if( !await service.sendMessage( data ) ){
                 alert( "Error while connecting to server" );
                 self.messages.pop();
             }
         }
+    },
+
+    scrollDown(){
+        let div = document.getElementById("dialogue");
+        div.scrollTop = div.scrollHeight;
     }
 }))
 
